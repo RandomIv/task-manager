@@ -6,7 +6,7 @@
 .DS_Store
 
 # Editors and IDEs
-# Ignores .vscode and .idea folders everywhere (e.g., in web/, api/, and root)
+# Ignores .vscode and .idea folders everywhere (e.g., in frontend/, backend/, and root)
 **/.vscode/
 **/.idea/
 
@@ -49,15 +49,15 @@ yarn-error.log*
 # 4. WEB (NEXT.JS)
 # ===================================================
 
-# Next.js build output folders (inside the 'web' project folder)
-/web/.next/
-/web/out/
-/web/build/
+# Next.js build output folders (inside the 'frontend' project folder)
+/frontend/.next/
+/frontend/out/
+/frontend/build/
 
 # TypeScript files
-web/next-env.d.ts
-web/*.tsbuildinfo
-web/dist/ # Potential TypeScript build output
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+frontend/dist/ # Potential TypeScript build output
 
 # Vercel-specific files
 .vercel
@@ -66,12 +66,15 @@ web/dist/ # Potential TypeScript build output
 # 5. API (NESTJS / TYPESCRIPT)
 # ===================================================
 
-# Compiled code output folders (inside the 'api' project folder)
-/api/dist/
-/api/build/
-/api/.build/
-/api/*.tsbuildinfo
-/api/generated
+# Compiled code output folders (inside the 'backend' project folder)
+/backend/dist/
+/backend/build/
+/backend/.build/
+/backend/*.tsbuildinfo
+/backend/generated
+
+# Ignore the local SQLite database
+/backend/prisma/dev.db
 
 # ===================================================
 # 6. TESTING / COVERAGE
