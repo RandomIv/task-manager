@@ -1,0 +1,80 @@
+# ===================================================
+# 1. GENERAL SYSTEM FILES (OS / Editors)
+# ===================================================
+
+# macOS
+.DS_Store
+
+# Editors and IDEs
+# Ignores .vscode and .idea folders everywhere (e.g., in web/, api/, and root)
+**/.vscode/
+**/.idea/
+
+# Keys and Certificates
+*.pem
+
+# ===================================================
+# 2. DEPENDENCIES (NODE_MODULES, YARN, PNPM)
+# ===================================================
+
+# General node_modules, and node_modules inside subdirectories
+/node_modules
+**/node_modules
+
+# Yarn PnP and cache files
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===================================================
+# 3. ENVIRONMENT CONFIGS (SECRETS - CRITICAL!)
+# ===================================================
+
+# Ignores all .env files in the root and all subdirectories
+.env
+.env.*
+!.env.example # Allows committing the example .env file
+
+# ===================================================
+# 4. WEB (NEXT.JS)
+# ===================================================
+
+# Next.js build output folders (inside the 'web' project folder)
+/web/.next/
+/web/out/
+/web/build/
+
+# TypeScript files
+web/next-env.d.ts
+web/*.tsbuildinfo
+web/dist/ # Potential TypeScript build output
+
+# Vercel-specific files
+.vercel
+
+# ===================================================
+# 5. API (NESTJS / TYPESCRIPT)
+# ===================================================
+
+# Compiled code output folders (inside the 'api' project folder)
+/api/dist/
+/api/build/
+/api/.build/
+/api/*.tsbuildinfo
+/api/generated
+
+# ===================================================
+# 6. TESTING / COVERAGE
+# ===================================================
+
+/coverage
