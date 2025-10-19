@@ -10,7 +10,7 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
-      - sqlite_data:/app/prisma
+      - ./backend/prisma/dev.db:/app/prisma/dev.db
     restart: unless-stopped
 
   frontend:
