@@ -38,6 +38,9 @@ Task Manager is a full-stack application built with **Next.js frontend** and **N
 * **Database:** SQLite (`dev.db`)
 
 ---
+## 🚀 Live Demo 
+
+**Deployed project (Vercel):** [https://task-manager-tjom.vercel.app/](https://task-manager-tjom.vercel.app/)
 
 ## 🐳 Running with Docker
 
