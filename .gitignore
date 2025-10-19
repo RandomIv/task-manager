@@ -74,7 +74,6 @@ frontend/dist/ # Potential TypeScript build output
 /backend/generated
 
 # Ignore the local SQLite database
-/backend/prisma/dev.db
 
 # ===================================================
 # 6. TESTING / COVERAGE
