@@ -10,6 +10,7 @@ import { AddTodoForm } from '@/components/AddTodoForm';
 import { CategoryFilter } from '@/components/CategoryFilter';
 import { TodoList } from '@/components/TodoList';
 import { Button } from '@/components/ui/button';
+import {AxiosError} from "axios";
 
 export default function Home() {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -46,9 +47,10 @@ export default function Home() {
             await api.createTodo(data);
             toast.success('Task added successfully!');
             fetchData();
-        } catch (err: any) {
-            if (err.response && err.response.status === 400) {
-                setFormApiError(err.response.data.message || 'Cannot add more than 5 tasks to this category.');
+        } catch (err) {
+            const axiosError = err as AxiosError<{ message?: string }>;
+            if (axiosError.response && axiosError.response.status === 400) {
+                setFormApiError(axiosError.response.data?.message || 'Cannot add more than 5 tasks to this category.');
             } else {
                 toast.error('Failed to add task.');
             }
