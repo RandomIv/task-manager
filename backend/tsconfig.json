@@ -21,5 +21,10 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "paths": {
+    "generated/prisma": ["generated/prisma"]
+  },
+  "include": ["src/**/*", "generated/**/*"],
+  "exclude": ["node_modules"]
 }
