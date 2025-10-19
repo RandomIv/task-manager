@@ -55,7 +55,7 @@
         text-white rounded-lg shadow-lg hover:shadow-xl
         transition-all duration-200 font-medium;
     }
-    ф
+
     .btn-icon {
         @apply transition-all duration-200 hover:scale-110;
     }
