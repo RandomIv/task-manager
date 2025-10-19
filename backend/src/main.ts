@@ -6,10 +6,21 @@ import { PrismaClientExceptionFilter } from './filters/prisma-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+  const whitelist = [
+    'http://localhost:3000',
+    'https://task-manager-tjom.vercel.app',
+  ];
+
   app.enableCors({
-    origin: '*',
+    origin: function (origin, callback) {
+      if (!origin || whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: '*',
+    credentials: true,
   });
   app.useGlobalFilters(new PrismaClientExceptionFilter());
   await app.listen(process.env.PORT ?? 5000);
